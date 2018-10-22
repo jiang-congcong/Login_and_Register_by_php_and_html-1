@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <style>
+        .body{width: 100%;
+
+        }
+        .body_head{
+            height: 200px;
+            width: 100%;
+            border: 2px red solid;
+        }
+        .body_body{height: 300px;
+            width: 100%;
+            border: 2px red solid;
+        }
+        .img{width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+        .login_left{
+            width: 39%;
+            float: left;
+            border: 2px red solid;
+        }
+        .login_right{
+            width: 38%;
+            float: left;
+            border: 2px red solid;
+        }
+        .username{
+            padding: 15px;
+            width: 60%;
+        }
+        .password{
+            padding: 15px;
+            width: 60%;
+        }
+        .loginbtn{
+            padding: 15px;
+            width: 32%;
+            background-color: #FF0000;
+
+        }
+        .registerbtn{
+            padding: 15px;
+            width: 32%;
+            background-color: #FF0000;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<head></head>
+
+<body>
+
+<div class="body" >
+    <img src="Image/4.jpg" class="img">
+
+<div class="body_head">
+    <div style="height: 80px ;width: 100%">
+    </div>
+    <h1 style="text-align:center">LOGIN</h1>
+</div>
+
+ <div class="body_body">
+<div class="login_left">&nbsp;</div>
+<div class="login_right">
+    <form action="test1.php" method="post">
+
+    <input type="text" class="username" name="name" placeholder="输入用户名" >
+    <br/>
+    <br/>
+    <input type="password" class="password" name="psd" placeholder="输入密码">
+    <br/>
+    <br/>
+    <input type="button" class="loginbtn" name="register" value="注册" onclick=" window.location.href='#'">
+    <input type="submit" class="registerbtn" name="login" value="登录">
+    </form>
+
+</div>
+
+
+</div>
+</div>
+</body>
+
+
+</body>
+</html>
