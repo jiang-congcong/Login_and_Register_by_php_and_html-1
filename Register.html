@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <!--  var pattern = /^[\w_-]{6,16}$/;  密码6到16位，包含任意大小写字母数字下划线减号-->
+
+    <style>
+        .bgimg{
+            width: 100%;
+            height: 100%;
+            /*border: 2px red solid;*/
+            position: absolute;
+            z-index: -1;
+        }
+        .bodytop{
+            width: 100%;
+            height: 80px;
+            /*border: 2px red solid;*/
+            text-align: center;
+        }
+
+        .registerleft{
+            width: 37.5%;
+            float: left;
+            /*border: 2px red solid;*/
+
+        }
+
+        .registerright{
+            width: 58%;
+            float: left;
+            /*border: 2px red solid;*/
+
+        }
+
+        .register{
+            width: 40%;
+            padding: 15px;
+        }
+        .registerbtn{
+            width: 44%;
+            padding: 15px;
+            background-color: #FF0000;
+        }
+
+    </style>
+
+    <script>
+        function checkname() {
+            var u = document.getElementById("regname");
+            var t = document.getElementById("prompt1");
+            var reg = /^[\w_-]{6,16}$/;
+            if (u == null || u.value.length == 0) {
+                t.innerHTML = "名字必填，不能为空";
+            }
+            else if (!reg.test(u.value)) {
+                t.innerHTML = "任意6到16位字母数字下划线连接线";
+            }
+            else {
+                t.innerHTML = "";
+            }
+
+        }
+
+        function checkpsd1() {
+            var u = document.getElementById("regpsd1");
+            var t = document.getElementById("prompt2");
+            var reg = /^[\w_-]{6,16}$/;
+            if (u == null || u.value.length == 0) {
+                t.innerHTML = "密码必填，不能为空";
+            }
+            else if (!reg.test(u.value)) {
+                t.innerHTML = "密码为任意6到16位字母数字下划线连接线";
+            }
+            else {
+                t.innerHTML = "";
+            }
+        }
+
+        function checkpsd2() {
+            var u = document.getElementById("regpsd2");
+            var t = document.getElementById("prompt3");
+            var reg = /^[\w_-]{6,16}$/;
+            var u2 = document.getElementById("regpsd1");
+            if (u == null || u.value.length == 0) {
+                t.innerHTML = "密码必填，不能为空";
+            }
+            else if (!reg.test(u.value)) {
+                t.innerHTML = "密码为任意6到16位字母数字下划线连接线";
+            }
+            else if(u.value!=u2.value){
+                t.innerHTML = "密码不一致！";
+            }
+            else {
+                t.innerHTML = "";
+            }
+        }
+
+        function checkemail() {
+            var u = document.getElementById("regmail");
+            var t = document.getElementById("prompt4");
+            var reg = /^(\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*?)/;
+            if (u == null || u.value.length == 0) {
+                t.innerHTML = "邮箱不能为空";
+            }
+            else if (!reg.test(u.value)) {
+                t.innerHTML = "邮箱格式不对";
+            }
+            else {
+                t.innerHTML = "";
+            }
+
+        }
+
+        function checktel() {
+            var u = document.getElementById("regtel");
+            var t = document.getElementById("prompt5");
+            var reg = /^1[3578]\d{9}$/;
+            if (u == null || u.value.length == 0) {
+                t.innerHTML = "电话号码不能为空";
+            }
+            else if (!reg.test(u.value)) {
+                t.innerHTML = "电话格式不对，以13/15/17/18开头11位数";
+            }
+            else {
+                t.innerHTML = "";
+            }
+
+
+        }
+
+        
+
+    </script>
+
+
+
+</head>
+<body>
+<img class="bgimg" src="Image/7.jpg">
+
+<head></head>
+<body>
+<div class="bodytop"><h1>Register</h1></div>
+<div class="registerleft">&nbsp;</div>
+<div class="registerright">
+    <form method="post" action="register.php">
+    <input type="text" class="register" id="regname" name="register_name" placeholder="输入用户名" onblur="checkname()">
+    <span id="prompt1" style="color:red;"></span>
+    <br/>
+    <br/>
+    <input type="password" class="register" id="regpsd1" name="register_psd1" placeholder="输入密码" onblur="checkpsd1()">
+    <span id="prompt2" style="color:red;"></span>
+    <br/>
+    <br/>
+    <input type="password" class="register" id="regpsd2" name="register_psd2" placeholder="再次输入密码" onblur="checkpsd2()">
+    <span id="prompt3" style="color:red;"></span>
+    <br/>
+    <br/>
+    <input type="email" class="register" id="regmail" name="register_email" placeholder="输入邮箱" onblur="checkemail()">
+    <span id="prompt4" style="color:red;"></span>
+    <br/>
+    <br/>
+    <input type="tel" class="register" id="regtel" name="register_tel" placeholder="输入手机号" onblur="checktel()">
+    <span id="prompt5" style="color:red;"></span>
+    <br/>
+    <br/>
+    <input type="submit" class="registerbtn" value="注册">
+    </form>
+
+</div>
+
+
+</body>
+
+
+</body>
+</html>
